@@ -1,0 +1,20 @@
+# 单卡 + WSL/部分环境 NCCL 异常时：DDP 使用 gloo 后端（避免 ncclUnhandledCudaError）
+_target_: pytorch_lightning.Trainer
+
+max_epochs: 1000
+accelerator: gpu
+deterministic: False
+detect_anomaly: False
+enable_progress_bar: True
+strategy:
+  _target_: pytorch_lightning.strategies.DDPStrategy
+  process_group_backend: gloo
+precision: 16
+accumulate_grad_batches:
+val_check_interval: 2000
+log_every_n_steps: 1
+num_sanity_val_steps: 2
+limit_val_batches: 20
+limit_test_batches:
+
+callbacks: "${oc.dict.values: callback}"

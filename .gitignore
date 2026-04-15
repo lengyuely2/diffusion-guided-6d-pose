@@ -1,0 +1,41 @@
+# ========== 数据与推理产物（不上传）==========
+Diff_Sam_6d/Data/
+
+# 训练日志、checkpoint、评测图、导出 CSV 等
+Diff_Sam_6d/diff/output/
+
+# ISM 诊断脚本产生的日志与可视化
+Diff_Sam_6d/ism/output/
+
+# ISM 推理输出与 Lightning 日志（体积大）
+SAM-6D-official/SAM-6D/Instance_Segmentation_Model/log/
+SAM-6D-official/SAM-6D/Instance_Segmentation_Model/lightning_logs/
+
+# 预训练权重（按官方 README 自行下载；可能是指向 Data 的符号链接，勿提交）
+SAM-6D-official/SAM-6D/Instance_Segmentation_Model/checkpoints
+SAM-6D-official/SAM-6D/Instance_Segmentation_Model/checkpoints/
+
+# ========== Python / 环境 ==========
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+dist/
+build/
+*.egg
+.venv/
+venv/
+.env
+
+# ========== 编辑器 / 系统 ==========
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# ========== 可选：本地编译产物 ==========
+Diff_Sam_6d/bop_renderer/build/
+cmake-build-*/
