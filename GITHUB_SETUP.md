@@ -1,5 +1,24 @@
 # 将本仓库上传到 GitHub（不含数据）
 
+**你的远程仓库（示例）**：`https://github.com/lengyuely2/diff_sam6d.git`
+
+本地已完成首次 `commit` 并添加 `origin` 时，在本机终端执行（需已登录 GitHub / 配置 PAT 或 SSH）：
+
+```bash
+cd /home/yan/work/sam6d
+git push -u origin main
+```
+
+若尚未添加远程：
+
+```bash
+git remote add origin https://github.com/lengyuely2/diff_sam6d.git
+git branch -M main
+git push -u origin main
+```
+
+---
+
 仓库根目录：`/home/yan/work/sam6d`（包含 `Diff_Sam_6d` 与 `SAM-6D-official` 的本地改动）。
 
 `.gitignore` 已排除：**BOP 数据、ISM npz 与 log、训练 checkpoint/日志、SAM 预训练权重目录** 等大文件。
