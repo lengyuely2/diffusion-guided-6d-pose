@@ -1,10 +1,54 @@
-# sam6d（Diff + ISM）
+# Diffusion-Guided 6D Pose Estimation
 
-本目录包含：
+## Overview
+This project explores diffusion-guided multi-hypothesis inference for monocular 6D pose estimation under ambiguity. It focuses on generating and refining multiple plausible pose candidates with geometric consistency constraints.
 
-- **`Diff_Sam_6d/`**：条件扩散位姿训练/评测、ISM 启动脚本、BOP 工具集成等（见 `Diff_Sam_6d/PROPOSAL.md`）。
-- **`SAM-6D-official/`**：官方 SAM-6D 仓库副本（含对 ISM 的本地修改，如 `model/utils.py`、`model/detector.py` 等）。
+## Problem
+Monocular 6D pose estimation often suffers from ambiguity, where multiple physically plausible poses can explain the same image observation. This is especially challenging for symmetric objects, partial occlusion, and visually similar viewpoints.
 
-**数据与权重不在仓库中。** 克隆后请将 BOP 数据放到 `Diff_Sam_6d/Data/`，并按各子项目 README 下载 ISM 检查点；或建立与本地一致的 `checkpoints` 符号链接。
+## Method
+The project investigates:
+- multi-hypothesis pose formulation
+- diffusion-guided hypothesis generation
+- geometric consistency checks for filtering and ranking
+- ambiguity-aware evaluation and failure analysis
 
-上传到 GitHub 的步骤与所需账号/Token：**见 [GITHUB_SETUP.md](./GITHUB_SETUP.md)**。
+The goal is to move from single-solution prediction toward a more robust multi-hypothesis pose inference framework.
+
+## Results
+Current work includes:
+- formulation of pose ambiguity as multi-hypothesis inference
+- exploration of diffusion-guided candidate generation
+- analysis framework for ambiguous monocular pose cases
+
+Future updates will include quantitative evaluation and more complete benchmarking.
+
+## Tech Stack
+- Python
+- PyTorch
+- NumPy
+- SciPy
+- Jupyter Notebook
+- OpenCV
+
+## Repository Structure
+- `notebooks/`: experiments and analysis
+- `src/`: core modules
+- `configs/`: parameter settings
+- `assets/`: figures and visualization
+- `results/`: outputs and examples
+
+## How to Run
+1. Install dependencies
+2. Prepare input images / object data
+3. Run the notebook or training / inference scripts
+4. Visualize generated hypotheses and evaluation outputs
+
+## Sample Results
+Add:
+- ambiguous pose cases
+- hypothesis visualization
+- qualitative comparison figures
+
+## Notes
+This is an active research repository. Some modules are experimental and may change as the project evolves.
